@@ -1,3 +1,5 @@
+package ifellowSecondLesson;
+
 public abstract class Car {
     protected String brand;
     protected String modelName;
