@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
+import units.configPropertiesReader;
 
 public class WebHooks {
 
@@ -14,7 +15,8 @@ public class WebHooks {
     public void InitBrowser(){
         Configuration.pageLoadStrategy = PageLoadStrategy.EAGER.toString();
         Configuration.timeout = 15000;
-        Selenide.open("https://edujira.ifellow.ru");
+        String url = configPropertiesReader.get("jira.url");
+        Selenide.open(url);
 
         WebDriver driver = WebDriverRunner.getWebDriver();
         driver.manage().window().maximize();
