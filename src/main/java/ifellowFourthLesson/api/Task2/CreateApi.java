@@ -1,10 +1,10 @@
-package ifellowFourthLesson.api;
+package ifellowFourthLesson.api.Task2;
 
 import io.restassured.response.ValidatableResponse;
 import java.util.Map;
 import static io.restassured.RestAssured.given;
 
-public class CreateApi extends CreateBaseApi{
+public class CreateApi extends CreateBaseApi {
 
 
     public ValidatableResponse createUser(Map<String, Object> userData) {

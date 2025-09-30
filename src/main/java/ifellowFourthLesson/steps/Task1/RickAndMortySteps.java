@@ -1,12 +1,10 @@
-package ifellowFourthLesson.steps;
+package ifellowFourthLesson.steps.Task1;
 
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
-import io.restassured.internal.common.assertion.Assertion;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import ifellowFourthLesson.api.RickAndMortyApi;
+import ifellowFourthLesson.api.Task1.RickAndMortyApi;
 import ifellowFourthLesson.dto.Character;
 import ifellowFourthLesson.dto.Episode;
 

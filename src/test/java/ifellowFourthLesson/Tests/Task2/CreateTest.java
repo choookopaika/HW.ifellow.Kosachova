@@ -1,6 +1,6 @@
-package ifellowFourthLesson.Tests;
+package ifellowFourthLesson.Tests.Task2;
 
-import ifellowFourthLesson.steps.CreateSteps;
+import ifellowFourthLesson.steps.Task2.CreateSteps;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;

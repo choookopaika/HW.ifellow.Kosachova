@@ -1,4 +1,4 @@
-package ifellowFourthLesson.api;
+package ifellowFourthLesson.api.Task1;
 
 import io.restassured.response.ValidatableResponse;
 import static io.restassured.RestAssured.given;

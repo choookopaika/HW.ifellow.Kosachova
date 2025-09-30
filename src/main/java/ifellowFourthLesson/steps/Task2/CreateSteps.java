@@ -1,7 +1,7 @@
-package ifellowFourthLesson.steps;
+package ifellowFourthLesson.steps.Task2;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ifellowFourthLesson.api.CreateApi;
+import ifellowFourthLesson.api.Task2.CreateApi;
 import io.qameta.allure.Step;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
