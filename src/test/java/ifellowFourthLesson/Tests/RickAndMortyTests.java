@@ -23,10 +23,10 @@ public class RickAndMortyTests {
         System.out.println("Персонаж: " + morty.getName() + "\nЛокация: " + morty.getLocation().getName() + "\nРаса: " + morty.getSpecies());
         System.out.println("\nПоследний персонаж: " + lastCharacter.getName() + "\nЛокация: " + lastCharacter.getLocation().getName() + "\nРаса: " + lastCharacter.getSpecies());
 
-        boolean sameSpecies = lastCharacter.getSpecies().equals(morty.getSpecies()); //раса персонажей
-        boolean sameLocation = lastCharacter.getLocation().getName().equals(morty.getLocation().getName()); //локация персонажей
+        boolean sameSpecies = lastCharacter.getSpecies().equals(morty.getSpecies()); //Раса персонажей
+        boolean sameLocation = lastCharacter.getLocation().getName().equals(morty.getLocation().getName()); //Локация персонажей
 
-        if (sameSpecies && sameLocation) { //проверяем расу, локацию Морти и последнего персонажа в эпизоде
+        if (sameSpecies && sameLocation) { //Проверяем расу, локацию Морти и последнего персонажа в эпизоде
             System.out.println("\nРаса и локация совпадают.");
         } else {
             System.out.println("\nРаса или локация не совпадают.");
