@@ -1,4 +1,4 @@
-package ifellowThirdLessonPages;
+package ifellowFourthLessonPages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -58,6 +58,7 @@ public class TaskPage {
             button.click();
 
         } else {
+            sleep(2000);
             moreDropdownButton
                     .shouldBe(enabled, Duration.ofSeconds(10))
                     .click();
