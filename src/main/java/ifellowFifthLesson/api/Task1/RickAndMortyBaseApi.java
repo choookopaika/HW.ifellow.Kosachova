@@ -1,6 +1,6 @@
-package ifellowFourthLesson.api.Task1;
+package ifellowFifthLesson.api.Task1;
 
-import ifellowFourthLesson.Specifications;
+import ifellowFifthLesson.Specifications;
 import io.restassured.RestAssured;
 
 import java.io.FileInputStream;

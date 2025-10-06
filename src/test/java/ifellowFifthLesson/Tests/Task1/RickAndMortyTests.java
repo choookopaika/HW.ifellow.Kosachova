@@ -1,7 +1,7 @@
-package ifellowFourthLesson.Tests.Task1;
+package ifellowFifthLesson.Tests.Task1;
 
-import ifellowFourthLesson.dto.Character;
-import ifellowFourthLesson.steps.Task1.RickAndMortySteps;
+import ifellowFifthLesson.dto.Character;
+import ifellowFifthLesson.steps.Task1.RickAndMortySteps;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
