@@ -11,7 +11,7 @@ public class RickAndMortyTests {
 
     @Test
     @DisplayName("1 задание")
-    void testMortyLastEpisodeAndCharacterData() {
+    void rickAndMortyTest() {
 
         String lastEpisodeUrl = steps.getMortyLastEpisode();//Получаем последний эпизод с Морти
         Character morty = steps.getCharacterByName("Morty Smith");
