@@ -12,6 +12,6 @@ public class LoginPage{
     public void loginIn(String username, String password){
         login.setValue(username);
         pass.setValue(password);
-        button.click();;
+        button.click();
     }
 }
