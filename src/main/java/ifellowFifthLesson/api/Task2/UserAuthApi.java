@@ -1,38 +1,38 @@
 package ifellowFifthLesson.api.Task2;
 
-import io.restassured.http.ContentType;
+import ifellowFifthLesson.api.BaseApi;
 import io.restassured.response.ValidatableResponse;
 
 import java.io.File;
 import java.util.Map;
 
+import static ifellowFifthLesson.api.requests.GetRequests.getWithAuth;;
 import static io.restassured.RestAssured.given;
 
-public class UserAuthApi extends UserAuthBaseApi{
 
-    public ValidatableResponse register(File userJson) {
+public class UserAuthApi extends BaseApi {
+
+    public UserAuthApi() {
+        super("userauth.api.url");
+    }
+
+    public ValidatableResponse register(File userJson) { //отправляется файл напрямую
         return given()
                 .contentType("application/json")
                 .body(userJson)
-                .when()
                 .post("/register")
                 .then();
     }
 
-    public ValidatableResponse login(Map<String, Object> user) {
+    public ValidatableResponse login(Map<String, Object> user) { //маппим json
         return given()
-                .header("Content-Type", "application/json")
+                .contentType("application/json")
                 .body(user)
                 .post("/login")
                 .then();
     }
 
     public ValidatableResponse logout(String token) {
-        return given()
-                .header("Authorization", token)
-                .get("/logout")
-                .then();
+        return getWithAuth("/logout", token);
     }
-
-
 }

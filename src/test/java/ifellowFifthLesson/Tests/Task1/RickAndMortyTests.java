@@ -4,9 +4,12 @@ import ifellowFifthLesson.dto.Character;
 import ifellowFifthLesson.steps.Task1.RickAndMortySteps;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RickAndMortyTests {
 
+    private final Logger log = LoggerFactory.getLogger(RickAndMortyTests.class);
     private final RickAndMortySteps steps = new RickAndMortySteps();
 
     @Test
@@ -20,16 +23,16 @@ public class RickAndMortyTests {
 
         Character lastCharacter = steps.getCharacterByUrl(lastCharacterUrl);//Получаем данные персонажа из предыдущего пункта
 
-        System.out.println("Персонаж: " + morty.getName() + "\nЛокация: " + morty.getLocation().getName() + "\nРаса: " + morty.getSpecies());
-        System.out.println("\nПоследний персонаж: " + lastCharacter.getName() + "\nЛокация: " + lastCharacter.getLocation().getName() + "\nРаса: " + lastCharacter.getSpecies());
+        log.info("Персонаж: {}, Локация: {}, Раса: {}", morty.getName(), morty.getLocation().getName(), morty.getSpecies());
+        log.info("Последний персонаж: {}, Локация: {}, Раса: {}", lastCharacter.getName(), lastCharacter.getLocation().getName(), lastCharacter.getSpecies());
 
         boolean sameSpecies = lastCharacter.getSpecies().equals(morty.getSpecies()); //Раса персонажей
         boolean sameLocation = lastCharacter.getLocation().getName().equals(morty.getLocation().getName()); //Локация персонажей
 
         if (sameSpecies && sameLocation) { //Проверяем расу, локацию Морти и последнего персонажа в эпизоде
-            System.out.println("\nРаса и локация совпадают.");
+            log.info("Раса и локация совпадают.");
         } else {
-            System.out.println("\nРаса или локация не совпадают.");
+            log.info("Раса или локация не совпадают.");
         }
     }
 }
