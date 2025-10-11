@@ -10,7 +10,7 @@ public class configPropertiesReader {
 
     static {
         try (InputStream input = configPropertiesReader.class.getClassLoader()
-                .getResourceAsStream("config.properties")) {
+                .getResourceAsStream("properties/config.properties")) {
             if (input == null) {
                 throw new RuntimeException("не найден config.properties в resources");
             }

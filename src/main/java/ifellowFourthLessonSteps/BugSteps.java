@@ -2,6 +2,8 @@ package ifellowFourthLessonSteps;
 
 import ifellowFourthLessonPages.NewBugPage;
 import ifellowFourthLessonPages.TaskPage;
+import io.cucumber.java.ru.Если;
+import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
 import org.junit.jupiter.api.Assertions;
@@ -30,15 +32,19 @@ public class BugSteps {
         Assertions.assertEquals(lastCreatedBugName, taskPage.headerTask.getText(), "баг не создан");
     }
 
-    @Когда("переводится баг по статусам {string}, {string}, {string}")
+    @Если("найден последний созданный баг")
+    public void openLastCreatedBug(){
+        taskPage.openLastBug();
+    }
+
+    @Тогда("переводится баг по статусам {string}, {string}, {string}")
     public void moveBugToStatuses(String status1, String status2, String status3){
-        taskPage.openTask(lastCreatedBugName);
         taskPage.moveTaskToStatus(status1);
         taskPage.moveTaskToStatus(status2);
         taskPage.moveTaskToStatus(status3);
     }
 
-    @Тогда("статус бага должен быть {string}")
+    @И("статус бага должен быть {string}")
     public void checkBugStatus(String expectedStatus){
         taskPage.statusTask.shouldHave(text(expectedStatus), Duration.ofSeconds(15));
     }
