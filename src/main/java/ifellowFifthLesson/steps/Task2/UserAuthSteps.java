@@ -16,10 +16,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 
-
 public class UserAuthSteps {
-
-
     private static final UserAuthApi api = new UserAuthApi() {};
     private static final ObjectMapper mapper = new ObjectMapper();
     private static final AtomicReference<String> token = new AtomicReference<>();
