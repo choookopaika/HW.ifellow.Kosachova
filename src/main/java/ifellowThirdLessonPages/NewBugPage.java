@@ -2,6 +2,7 @@ package ifellowThirdLessonPages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,6 +16,7 @@ public class NewBugPage {
     public ElementsCollection visualButtons = $$x("//div[@class='aui-navgroup-primary']//button[text()='Визуальный']").as("Визуальный");
     public SelenideElement body = $x("//body").as("Добавление описания");
 
+    @Step("Создание {bugType} с названием {name}")
     public void createNewBug(String bugType, String name, String description){
         createButtonBug.click();
         typeBug.click();

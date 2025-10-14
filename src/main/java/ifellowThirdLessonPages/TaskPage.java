@@ -3,6 +3,7 @@ package ifellowThirdLessonPages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.time.Duration;
 
@@ -21,8 +22,9 @@ public class TaskPage {
     public SelenideElement list = $x("//ol[contains(@class,'issue-list')]/li").as("Лист");
     public SelenideElement lastBug = $x("(//ol[contains(@class,'issue-list')]/li[1]/a)").as("Последний баг");
     public ElementsCollection visibleButtons = $$x("//div[@id='opsbar-opsbar-transitions']//a[contains(@class,'issueaction-workflow-transition')]").as("Видимые статусы");
+    private final Duration timeout = Duration.ofSeconds(10);
 
-
+    @Step("Открытие задачи {taskFullName}")
     public void openTask(String taskFullName){
         searchInput
                 .shouldBe(visible).
@@ -31,24 +33,25 @@ public class TaskPage {
         headerTask.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
+    @Step("Открытие последней созданной ошибки")
     public void openLastBug() {
         sort
-                .shouldBe(visible, Duration.ofSeconds(10))
+                .shouldBe(visible, timeout)
                 .click();
 
-        dropdownContainer.shouldBe(visible, Duration.ofSeconds(10));
+        dropdownContainer.shouldBe(visible, timeout);
 
         dropdownContainer.$x(".//ul[contains(@class,'aui-list-section')]//li[1]")//ищет элемент относительно dropdownContainer
                 .as("Первое поле (Создано)")
-                .shouldBe(visible, Duration.ofSeconds(10))
+                .shouldBe(visible, timeout)
                 .click();
 
-        list.shouldBe(visible, Duration.ofSeconds(10));
-
-        lastBug.shouldBe(visible, Duration.ofSeconds(10)).click();
+        list.shouldBe(visible, timeout);
+        lastBug.shouldBe(visible, timeout).click();
     }
 
 
+    @Step("Смена стастуса {targetStatus}")
     public void moveTaskToStatus(String targetStatus) {
         visibleButtons
                 .filter(visible);
@@ -59,7 +62,7 @@ public class TaskPage {
 
         } else {
             moreDropdownButton
-                    .shouldBe(enabled, Duration.ofSeconds(10))
+                    .shouldBe(enabled, timeout)
                     .click();
 
             SelenideElement targetButton = $x("//aui-dropdown-menu[@id='opsbar-transitions_more_drop']//span[text()='" + targetStatus + "']/parent::a")//передается динамическая переменная
