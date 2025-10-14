@@ -10,6 +10,7 @@ public class ProjectPage {
     public SelenideElement projectXpath = $x("//a[@id = 'browse_link']").as("Вкладка проекты");;
     public SelenideElement projectTestXpath = $x("//a[@id='admin_main_proj_link_lnk']").as("Выбор проекта");;
     public SelenideElement projectHeader = $x("//*[@title='Test']").as("Проект: тест");;
+    public SelenideElement projectCounter = $x("//div[@class='pager']//div[@class='showing']/span").as("Счетчик");
 
     public void openProject(){
         projectXpath.click();
@@ -18,9 +19,7 @@ public class ProjectPage {
     }
 
     public int getCountOfProject(){
-        SelenideElement projectCounter = $x("//div[@class='pager']//div[@class='showing']/span")
-                .as("Счетчик")
-                .shouldBe(visible);
+        projectCounter.shouldBe(visible);
         String countOfTasks = projectCounter.getText();
         String total = countOfTasks.split("из")[1].trim();
         return Integer.parseInt(total.replaceAll("\\D", ""));

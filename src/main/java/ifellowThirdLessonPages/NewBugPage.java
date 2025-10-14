@@ -11,8 +11,9 @@ public class NewBugPage {
     public SelenideElement typeBug = $x("//input[@id='issuetype-field']").as("Выбор типа: ошибка");
     public SelenideElement nameBug = $x("//input[@class='text long-field']").as("Название ошибки");
     public SelenideElement nextButtonBug = $x("//input[@value='Создать']").as("Кнопка создания ошибки");
-    public SelenideElement descriptionBug = $x("//iframe[contains(@id,'mce_')]").as("описание ошибки");
+    public SelenideElement descriptionBug = $x("//iframe[contains(@id,'mce_')]").as("Описание ошибки");
     public ElementsCollection visualButtons = $$x("//div[@class='aui-navgroup-primary']//button[text()='Визуальный']").as("Визуальный");
+    public SelenideElement body = $x("//body").as("Добавление описания");
 
     public void createNewBug(String bugType, String name, String description){
         createButtonBug.click();
@@ -23,7 +24,7 @@ public class NewBugPage {
         typeBug.setValue(bugType);
 
         if (!typeBug.getValue().equals(bugType)) {
-            $x("//div[@id='issuetype-suggestions']//a[normalize-space(.)='" + bugType + "']")
+            $x("//div[@id='issuetype-suggestions']//a[normalize-space(.)='" + bugType + "']")//передается динамическая переменная
                     .as("Выбор типа задачи: ошибка")
                     .click();
         }
@@ -36,9 +37,7 @@ public class NewBugPage {
         }
 
         switchTo().frame(descriptionBug);
-        $x("//body")
-                .as("Добавление описания")
-                .setValue(description);
+        body.setValue(description);
         switchTo().defaultContent();
         nextButtonBug.click();
     }

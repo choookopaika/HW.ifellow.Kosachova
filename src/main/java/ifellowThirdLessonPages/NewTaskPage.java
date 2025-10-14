@@ -19,7 +19,7 @@ public class NewTaskPage {
         typeOfTask.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         typeOfTask.sendKeys(Keys.BACK_SPACE);
         typeOfTask.setValue(type);
-        $x("//div[@id='issuetype-suggestions']//a[normalize-space(.)='" + type + "']")
+        $x("//div[@id='issuetype-suggestions']//a[normalize-space(.)='" + type + "']")//передается динамическая переменная
                 .as("Выбор типа задачи")
                 .click();
         nameTask.setValue(name);
