@@ -1,4 +1,4 @@
-package ifellowThirdLessonPages;
+package ifellowSixthLessonPages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -59,7 +59,6 @@ public class TaskPage {
 
         if (button.exists() && button.isEnabled()) {
             button.click();
-
         } else {
             moreDropdownButton
                     .shouldBe(enabled, timeout)
@@ -67,7 +66,7 @@ public class TaskPage {
 
             SelenideElement targetButton = $x("//aui-dropdown-menu[@id='opsbar-transitions_more_drop']//span[text()='" + targetStatus + "']/parent::a")//передается динамическая переменная
                     .as("Не видимые статусы (в выпадающем списке)")
-                    .shouldBe(visible, Duration.ofSeconds(15));
+                    .shouldBe(visible,enabled);
 
             actions().moveToElement(targetButton).click().perform();
         }

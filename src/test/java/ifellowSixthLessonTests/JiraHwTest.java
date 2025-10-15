@@ -1,5 +1,5 @@
-package ifellowThirdLessonTests;
-import ifellowThirdLessonPages.*;
+package ifellowSixthLessonTests;
+import ifellowSixthLessonPages.*;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
@@ -94,5 +94,6 @@ public class JiraHwTest extends WebHooks{
         refresh();
         taskPage.statusTask.shouldHave(text("ГОТОВО"), Duration.ofSeconds(15));
         log.info("статус: " + taskPage.statusTask.getText());
+        Assertions.assertEquals("ГОТОВО", taskPage.statusTask.getText(), "задача не выполнена");
     }
 }

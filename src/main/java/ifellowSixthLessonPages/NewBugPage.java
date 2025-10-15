@@ -1,4 +1,4 @@
-package ifellowThirdLessonPages;
+package ifellowSixthLessonPages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

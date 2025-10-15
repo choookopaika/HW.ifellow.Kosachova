@@ -1,4 +1,4 @@
-package ifellowThirdLessonTests;
+package ifellowSixthLessonTests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -14,6 +14,15 @@ import units.configPropertiesReader;
 
 public class WebHooks {
 
+    @BeforeAll
+    public static void setUpAllure(){
+        SelenideLogger.addListener("AllureSelenide",
+                new AllureSelenide().
+                        screenshots(true).
+                        savePageSource(false)
+        );
+    }
+
     @BeforeEach
     public void InitBrowser(){
         Configuration.pageLoadStrategy = PageLoadStrategy.EAGER.toString();
@@ -28,14 +37,5 @@ public class WebHooks {
     @AfterEach
     public void AfterTest(){
         Selenide.closeWebDriver();
-    }
-
-    @BeforeAll
-    public static void setUpAllure(){
-        SelenideLogger.addListener("AllureSelenide",
-                new AllureSelenide().
-                        screenshots(true).
-                        savePageSource(false)
-                );
     }
 }
