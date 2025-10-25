@@ -1,4 +1,4 @@
-package ifellowFinalTaskAPI.api.Task2;
+package ifellowFinalTaskAPI.api.UserAuth;
 
 import ifellowFinalTaskAPI.api.BaseApi;
 import io.restassured.response.ValidatableResponse;

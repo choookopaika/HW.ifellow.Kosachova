@@ -1,4 +1,4 @@
-package ifellowFinalTaskAPI.api.Task1;
+package ifellowFinalTaskAPI.api.RickAndMorty;
 
 import ifellowFinalTaskAPI.api.BaseApi;
 import io.restassured.response.ValidatableResponse;

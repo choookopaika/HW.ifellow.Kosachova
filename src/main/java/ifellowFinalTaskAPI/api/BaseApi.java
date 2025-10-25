@@ -1,7 +1,7 @@
 package ifellowFinalTaskAPI.api;
 
 import io.restassured.RestAssured;
-import ifellowFinalTaskAPI.Specifications;
+import unit.configPropertiesReader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,9 +14,11 @@ public abstract class BaseApi {
             try (FileInputStream input = new FileInputStream("src/test/resources/config.properties")) {
                 properties.load(input);
             }
+
             String baseUrl = properties.getProperty(propertyKey);
-            RestAssured.requestSpecification = Specifications.baseRequestSpec(baseUrl);
-        } catch (IOException e) {
+            RestAssured.requestSpecification = configPropertiesReader.baseRequestSpec(baseUrl);
+        }
+        catch (IOException e) {
             throw new RuntimeException("ошибка при загрузке URL", e);
         }
     }
