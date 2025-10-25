@@ -1,12 +1,12 @@
-package ifellowFifthLesson.api.Task1;
+package ifellowFinalTaskAPI.api.Task1;
 
-import ifellowFifthLesson.api.BaseApi;
+import ifellowFinalTaskAPI.api.BaseApi;
 import io.restassured.response.ValidatableResponse;
 
 import java.util.Map;
 
-import static ifellowFifthLesson.api.requests.GetRequests.getDefault;
-import static ifellowFifthLesson.api.requests.GetRequests.getWithParams;
+import static ifellowFinalTaskAPI.api.requests.GetRequests.getDefault;
+import static ifellowFinalTaskAPI.api.requests.GetRequests.getWithParams;
 
 public class RickAndMortyApi extends BaseApi {
 

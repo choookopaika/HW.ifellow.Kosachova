@@ -1,4 +1,4 @@
-package ifellowFifthLesson.dto;
+package ifellowFinalTaskAPI.dto;
 
 import lombok.Data;
 

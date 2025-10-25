@@ -1,7 +1,7 @@
-package ifellowFifthLesson.Tests.Task1;
+package ifellowFinalTaskAPI.Tests.Task1;
 
-import ifellowFifthLesson.dto.Character;
-import ifellowFifthLesson.steps.Task1.RickAndMortySteps;
+import ifellowFinalTaskAPI.dto.Character;
+import ifellowFinalTaskAPI.steps.Task1.RickAndMortySteps;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

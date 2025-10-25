@@ -1,6 +1,6 @@
-package ifellowFifthLesson.steps.Task2;
+package ifellowFinalTaskAPI.steps.Task2;
 
-import ifellowFifthLesson.api.Task2.UserAuthApi;
+import ifellowFinalTaskAPI.api.Task2.UserAuthApi;
 import io.qameta.allure.Step;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.ExtractableResponse;

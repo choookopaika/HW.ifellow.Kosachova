@@ -1,12 +1,12 @@
-package ifellowFifthLesson.api.Task2;
+package ifellowFinalTaskAPI.api.Task2;
 
-import ifellowFifthLesson.api.BaseApi;
+import ifellowFinalTaskAPI.api.BaseApi;
 import io.restassured.response.ValidatableResponse;
 
 import java.io.File;
 import java.util.Map;
 
-import static ifellowFifthLesson.api.requests.GetRequests.getWithAuth;;
+import static ifellowFinalTaskAPI.api.requests.GetRequests.getWithAuth;;
 import static io.restassured.RestAssured.given;
 
 

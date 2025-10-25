@@ -1,12 +1,16 @@
-package ifellowFifthLesson.steps.Task1;
+package ifellowFinalTaskAPI.steps.Task1;
 
+import io.cucumber.java.ru.Дано;
+import io.cucumber.java.ru.И;
+import io.cucumber.java.ru.Когда;
+import io.cucumber.java.ru.Тогда;
 import io.qameta.allure.Step;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import ifellowFifthLesson.api.Task1.RickAndMortyApi;
-import ifellowFifthLesson.dto.Character;
-import ifellowFifthLesson.dto.Episode;
+import ifellowFinalTaskAPI.api.Task1.RickAndMortyApi;
+import ifellowFinalTaskAPI.dto.Character;
+import ifellowFinalTaskAPI.dto.Episode;
 
 import java.util.List;
 
@@ -14,7 +18,7 @@ public class RickAndMortySteps {
 
     private static final RickAndMortyApi api = new RickAndMortyApi();
 
-    @Step("Получить персонажа по имени")
+    @Дано("Получаем персонажа по имени {name}")
     public Character getCharacterByName(String name) {
         ExtractableResponse<Response> response = api.getCharacterByName(name)
                 .statusCode(200)
@@ -28,7 +32,7 @@ public class RickAndMortySteps {
         return characters.get(0);
     }
 
-    @Step("Получить персонажа Морти и получить последний эпизод с ним")
+    @Когда("Получаем персонажа Морти и последний эпизод с ним")
     public String getMortyLastEpisode() {
         ExtractableResponse<Response> response = api.getCharacterByName("Morty Smith")
                 .statusCode(HttpStatus.SC_OK)
@@ -46,7 +50,7 @@ public class RickAndMortySteps {
         return lastEpisode;
     }
 
-    @Step("Получить последнего персонажа из последнего эпизода")
+    @И("Получаем последнего персонажа из последнего эпизода")
     public String getLastCharacterFromEpisode(String episodeUrl) {
         ExtractableResponse<Response> response = api.getEpisodeByUrlResponse(episodeUrl)
                 .statusCode(HttpStatus.SC_OK)
@@ -63,7 +67,7 @@ public class RickAndMortySteps {
         return lastCharacterUrl;
     }
 
-    @Step("Получить данные персонажа по URL")
+    @Тогда("Получаем данные персонажа по URL")
     public Character getCharacterByUrl(String characterUrl) {
         ExtractableResponse<Response> response = api.getCharacterByUrlResponse(characterUrl)
                 .statusCode(HttpStatus.SC_OK)

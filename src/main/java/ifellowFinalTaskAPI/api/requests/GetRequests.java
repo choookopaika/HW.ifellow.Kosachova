@@ -1,4 +1,4 @@
-package ifellowFifthLesson.api.requests;
+package ifellowFinalTaskAPI.api.requests;
 
 import io.restassured.response.ValidatableResponse;
 

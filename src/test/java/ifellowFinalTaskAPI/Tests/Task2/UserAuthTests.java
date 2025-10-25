@@ -1,6 +1,6 @@
-package ifellowFifthLesson.Tests.Task2;
+package ifellowFinalTaskAPI.Tests.Task2;
 
-import ifellowFifthLesson.steps.Task2.UserAuthSteps;
+import ifellowFinalTaskAPI.steps.Task2.UserAuthSteps;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

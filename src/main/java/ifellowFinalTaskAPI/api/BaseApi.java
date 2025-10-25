@@ -1,7 +1,7 @@
-package ifellowFifthLesson.api;
+package ifellowFinalTaskAPI.api;
 
 import io.restassured.RestAssured;
-import ifellowFifthLesson.Specifications;
+import ifellowFinalTaskAPI.Specifications;
 
 import java.io.FileInputStream;
 import java.io.IOException;
