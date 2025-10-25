@@ -1,7 +1,10 @@
 package ifellowSixthLessonPages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.SetValueOptions;
+import io.qameta.allure.Param;
 import io.qameta.allure.Step;
+import io.qameta.allure.model.Parameter;
 
 import java.time.Duration;
 
@@ -17,10 +20,10 @@ public class LoginPage{
     public SelenideElement loggedIn = $x("//a[@id = 'header-details-user-fullname']").as("Проверка авторизации");
 
     @Step("Авторизация под пользователем {username}")
-    public void loginIn(String username, String password){
-        login.shouldBe(enabled, Duration.ofSeconds(15));
+    public void loginIn(String username, @Param(mode = Parameter.Mode.MASKED) String password){
+        login.shouldBe(enabled, visible);
         login.setValue(username);
-        pass.setValue(password);
+        pass.setValue(SetValueOptions.withText(password).sensitive());
         button.click();
     }
 

@@ -51,7 +51,7 @@ public class TaskPage {
     }
 
 
-    @Step("Смена стастуса {targetStatus}")
+    @Step("Смена статуса {targetStatus}")
     public void moveTaskToStatus(String targetStatus) {
         visibleButtons
                 .filter(visible);
@@ -66,7 +66,7 @@ public class TaskPage {
 
             SelenideElement targetButton = $x("//aui-dropdown-menu[@id='opsbar-transitions_more_drop']//span[text()='" + targetStatus + "']/parent::a")//передается динамическая переменная
                     .as("Не видимые статусы (в выпадающем списке)")
-                    .shouldBe(visible,enabled);
+                    .shouldBe(visible, enabled);
 
             actions().moveToElement(targetButton).click().perform();
         }

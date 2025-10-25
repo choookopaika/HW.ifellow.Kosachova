@@ -1,9 +1,9 @@
 package ifellowSixthLessonTests;
 import ifellowSixthLessonPages.*;
-import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-@Epic("Jira тест")
+@DisplayName("Jira тест")
 public class JiraHwTest extends WebHooks{
 
     private final Logger log = LoggerFactory.getLogger(JiraHwTest.class);
@@ -27,6 +27,7 @@ public class JiraHwTest extends WebHooks{
     @Test
     @Story("Авторизация")
     @DisplayName("Тест 1.")
+    @Tag("Test_1")
     public void loginTest() {
         String username = configPropertiesReader.get("jira.username");
         String password = configPropertiesReader.get("jira.password");
@@ -37,6 +38,7 @@ public class JiraHwTest extends WebHooks{
     @Test
     @Story("Открытие проекта")
     @DisplayName("Тест 2.")
+    @Tag("Test_2")
     public void openProjectTest() {
         loginTest();
 
@@ -47,6 +49,7 @@ public class JiraHwTest extends WebHooks{
     @Test
     @Story("Создание задачи")
     @DisplayName("Тест 3.")
+    @Tag("Test_3")
     public void createNewTaskTest(){
         openProjectTest();
 
@@ -64,6 +67,7 @@ public class JiraHwTest extends WebHooks{
     @Test
     @Story("Проверка TestSeleniumATHomework")
     @DisplayName("Тест 4.")
+    @Tag("Test_4")
     public void checkTaskDetailsTest(){
         createNewTaskTest();
 
@@ -77,10 +81,11 @@ public class JiraHwTest extends WebHooks{
     @Test
     @Story("Создание ошибки и проведение по статусам")
     @DisplayName("Тест 5.")
+    @Tag("Test_5")
     public void createNewBugTest(){
         checkTaskDetailsTest();
 
-       newBugPage.createNewBug("Ошибка","NewBug_9","описание бага через автотест.");
+       newBugPage.createNewBug("Ошибка","NewBug_9","описание бага через автотест");
         sleep(2000);
         refresh();
         taskPage.openTask("NewBug_9");
@@ -93,7 +98,7 @@ public class JiraHwTest extends WebHooks{
         taskPage.moveTaskToStatus("Выполнено");
         refresh();
         taskPage.statusTask.shouldHave(text("ГОТОВО"), Duration.ofSeconds(15));
-        log.info("статус: " + taskPage.statusTask.getText());
+        log.info("Статус: " + taskPage.statusTask.getText());
         Assertions.assertEquals("ГОТОВО", taskPage.statusTask.getText(), "задача не выполнена");
     }
 }
