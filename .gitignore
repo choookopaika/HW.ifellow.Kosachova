@@ -5,6 +5,7 @@ target/
 /allure-results/
 .idea
 /.idea
+.allure
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

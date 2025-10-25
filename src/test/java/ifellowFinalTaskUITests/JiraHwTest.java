@@ -1,5 +1,5 @@
-package ifellowSixthLessonTests;
-import ifellowSixthLessonPages.*;
+package ifellowFinalTaskUITests;
+import ifellowFinalTaskUIPages.*;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

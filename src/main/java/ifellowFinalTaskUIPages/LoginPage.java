@@ -1,4 +1,4 @@
-package ifellowSixthLessonPages;
+package ifellowFinalTaskUIPages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.SetValueOptions;
