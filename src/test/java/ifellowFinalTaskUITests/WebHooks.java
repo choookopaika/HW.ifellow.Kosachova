@@ -1,4 +1,4 @@
-package ifellowSixthLessonTests;
+package ifellowFinalTaskUITests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -16,10 +16,12 @@ public class WebHooks {
 
     @BeforeAll
     public static void setUpAllure(){
+        String allure_properties = configPropertiesReader.get("allure.properties");
+        boolean allure_properties_value = Boolean.parseBoolean(allure_properties);
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide().
-                        screenshots(true).
-                        savePageSource(false)
+                        screenshots(allure_properties_value).
+                        savePageSource(allure_properties_value)
         );
     }
 
@@ -33,6 +35,7 @@ public class WebHooks {
         WebDriver driver = WebDriverRunner.getWebDriver();
         driver.manage().window().maximize();
     }
+
 
     @AfterEach
     public void AfterTest(){
