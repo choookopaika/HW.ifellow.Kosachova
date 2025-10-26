@@ -3,10 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /allure-results/
-.idea
-/.idea
 .allure
-
+/.idea
+.idea
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -40,3 +39,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/allure-results/2e4aff95-71b5-4b36-b9a7-b7a714548bc8-container.json
