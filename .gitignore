@@ -6,6 +6,7 @@ target/
 .allure
 /.idea
 .idea
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
